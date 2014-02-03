@@ -39,6 +39,7 @@ namespace NeuFlux
       void PostUserTrackingAction(const G4Track*);
 
       void OnNewFileCreate();
+      void UpdateBranches(const G4Track* theTrack);
 
     private:
       Double_t fTrackID ;

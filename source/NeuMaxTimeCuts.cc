@@ -50,7 +50,7 @@ G4double NeuFlux::NeuMaxTimeCuts::PostStepGetPhysicalInteractionLength(const G4T
          G4double beta =
              (aParticle->GetTotalMomentum()) /
              (aParticle->GetTotalEnergy());
-         temp = beta * c_light * dTime;
+         temp = beta * CLHEP::c_light * dTime;
          if (proposedStep > temp)
             proposedStep = temp;
       }

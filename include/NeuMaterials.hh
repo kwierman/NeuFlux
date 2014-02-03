@@ -42,7 +42,7 @@ namespace NeuFlux
 				This data came from an unknown source
 
 			*/
-			NeuConcrete() : G4Material( "concrete Approximation", 2.4*g/cm3, 2)
+			NeuConcrete() : G4Material( "concrete Approximation", 2.4*CLHEP::g/CLHEP::cm3, 2)
 			{
 				natO = new NeuOxygen();
 				natSi = new NeuSilicon();
@@ -106,7 +106,7 @@ namespace NeuFlux
 				The only constructor that should be used with this class.
 				This data came from an unknown source
 			*/
-			NeuRock() : G4Material( "rock Approximation", 3200*g/cm3, 10, kStateSolid)
+			NeuRock() : G4Material( "rock Approximation", 3200*CLHEP::g/CLHEP::cm3, 10, kStateSolid)
 			{
 				natO = new NeuOxygen;
 				natSi = new NeuSilicon;
@@ -166,7 +166,7 @@ namespace NeuFlux
 				The only constructor that should be used with this class.
 				This data came from an unknown source
 			*/
-			NeuHydroCarbon() : G4Material( "hydrocarbon Approximation", 3200*g/cm3, 2, kStateSolid)
+			NeuHydroCarbon() : G4Material( "hydrocarbon Approximation", 3200*CLHEP::g/CLHEP::cm3, 2, kStateSolid)
 			{
 				natC = new NeuCarbon();
 				natH = new NeuHydrogen();

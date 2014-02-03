@@ -44,7 +44,7 @@ void NeuFlux::NeuCosmicGenerator::GeneratePrimaryVertex(G4Event * evt)
 	TF2* muonE =
 			new TF2("f2",
 					".372*((x+105.66)*.001+15)/(((x+105.66)*.001*y+80)*((x+105.66)*.001+15/y)*(5*(x+105.66)*.001+10/y)^(2.57))",
-					0.25 * GeV, 100 * GeV, 0, 1);
+					0.25 * CLHEP::GeV, 100 * CLHEP::GeV, 0, 1);
 	muonE->SetNpx(500);
 	muonE->SetNpy(400);
 

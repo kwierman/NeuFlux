@@ -19,8 +19,8 @@
 #include "G4UItcsh.hh"
 
 #include "QGSP_BIC_HP.hh"
-#include "QGSP_BERT_HP.hh"
-#include "QGSP_BERT_EMV.hh"
+//#include "QGSP_BERT_HP.hh"
+//#include "QGSP_BERT_EMV.hh"
 
 #ifdef G4UI_USE_XM
 #include "G4UIXm.hh"

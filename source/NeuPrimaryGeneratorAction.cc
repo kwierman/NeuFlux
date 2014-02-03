@@ -18,8 +18,8 @@ NeuFlux::NeuPrimaryGeneratorAction::NeuPrimaryGeneratorAction() : G4VUserPrimary
    G4ParticleDefinition* particle = particleTable->FindParticle(pname);
    fGPS->SetParticleDefinition(particle);
    fGPS->SetParticleMomentumDirection(G4ThreeVector(0., 0., -1.));
-   fGPS->SetParticleEnergy(10.0*MeV);
-   fGPS->SetParticlePosition(G4ThreeVector(0.*cm, 0.*cm, 0.0*cm) );
+   fGPS->SetParticleEnergy(10.0*CLHEP::MeV);
+   fGPS->SetParticlePosition(G4ThreeVector(0.*CLHEP::cm, 0.*CLHEP::cm, 0.0*CLHEP::cm) );
 }
 NeuFlux::NeuPrimaryGeneratorAction::~NeuPrimaryGeneratorAction()
 {

@@ -7,7 +7,17 @@
 
 #include <string>
 
-NeuFlux::NeuTrackingAction::NeuTrackingAction() : NeuOutputtingComponent(),  fTrackID(0), fParentID(0), fX(0), fY(0), fZ(0), fLT(0), fGT(0), fPT(0), fVolume(0), fNextVolume(0)
+NeuFlux::NeuTrackingAction::NeuTrackingAction() : NeuOutputtingComponent(),  
+												  fTrackID(0), 
+												  fParentID(0),
+												  fX(0),
+												  fY(0),
+												  fZ(0),
+												  fLT(0),
+												  fGT(0),
+												  fPT(0),
+												  fVolume(0),
+												  fNextVolume(0)
 {}
 
 NeuFlux::NeuTrackingAction::~NeuTrackingAction()
@@ -29,15 +39,15 @@ void NeuFlux::NeuTrackingAction::PostUserTrackingAction(const G4Track* theTrack)
 void NeuFlux::NeuTrackingAction::OnNewFileCreate()
 {
 	NeuFlux::NeuRootOutput::GetInstance()->AddTree("NeuTrackingAction");
-    NeuFlux::NeuRootOutput::GetInstance()->AddBranch<double>("NeuTrackingAction"," TrackID", &fTrackID );              
-    NeuFlux::NeuRootOutput::GetInstance()->AddBranch<double>("NeuTrackingAction"," ParentID", &fParentID);               
-    NeuFlux::NeuRootOutput::GetInstance()->AddBranch<double>("NeuTrackingAction"," X", &fX       );        
-    NeuFlux::NeuRootOutput::GetInstance()->AddBranch<double>("NeuTrackingAction"," Y", &fY       );        
-    NeuFlux::NeuRootOutput::GetInstance()->AddBranch<double>("NeuTrackingAction"," Z", &fZ       );        
-    NeuFlux::NeuRootOutput::GetInstance()->AddBranch<double>("NeuTrackingAction"," LT", &fLT      );         
-    NeuFlux::NeuRootOutput::GetInstance()->AddBranch<double>("NeuTrackingAction"," GT", &fGT      );         
-    NeuFlux::NeuRootOutput::GetInstance()->AddBranch<double>("NeuTrackingAction"," PT", &fPT      );
-    NeuFlux::NeuRootOutput::GetInstance()->AddBranch<double>("NeuTrackingAction"," Volume", &fVolume      );
+    NeuFlux::NeuRootOutput::GetInstance()->AddBranch<double>("NeuTrackingAction"," TrackID", 	&fTrackID 		  );              
+    NeuFlux::NeuRootOutput::GetInstance()->AddBranch<double>("NeuTrackingAction"," ParentID", 	&fParentID	      );               
+    NeuFlux::NeuRootOutput::GetInstance()->AddBranch<double>("NeuTrackingAction"," X", 			&fX       		  );        
+    NeuFlux::NeuRootOutput::GetInstance()->AddBranch<double>("NeuTrackingAction"," Y", 			&fY       		  );        
+    NeuFlux::NeuRootOutput::GetInstance()->AddBranch<double>("NeuTrackingAction"," Z", 			&fZ       		  );        
+    NeuFlux::NeuRootOutput::GetInstance()->AddBranch<double>("NeuTrackingAction"," LT", 		&fLT      		  );         
+    NeuFlux::NeuRootOutput::GetInstance()->AddBranch<double>("NeuTrackingAction"," GT", 		&fGT      		  );         
+    NeuFlux::NeuRootOutput::GetInstance()->AddBranch<double>("NeuTrackingAction"," PT", 		&fPT      		  );
+    NeuFlux::NeuRootOutput::GetInstance()->AddBranch<double>("NeuTrackingAction"," Volume", 	&fVolume      	  );
     NeuFlux::NeuRootOutput::GetInstance()->AddBranch<double>("NeuTrackingAction"," NextVolume", &fNextVolume      );         
 }
 

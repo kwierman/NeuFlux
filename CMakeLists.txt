@@ -43,7 +43,7 @@ foreach(_app ${applications})
 	install(TARGETS ${name_without_extension} DESTINATION bin)
 endforeach()
 #----------------------------------------------------------------------------
-#Add in Documentation
+# Add in Documentation
 add_subdirectory(Documentation)
 #----------------------------------------------------------------------------
 

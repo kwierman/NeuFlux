@@ -43,12 +43,15 @@ namespace NeuFlux
 	    NeuRootOutput()
 	    {
 			fOutput = NULL;
+			dataTakingFlag = true;
 	    }
 	    NeuRootOutput(NeuRootOutput const&){}
    		NeuRootOutput& operator=(NeuRootOutput const&){return *this;}
 
 	    std::vector<TTree*> fTrees; //!< Vector of lcoally known trees in the output file
 	    TFile* fOutput; 		//!< Current output file. Note that when the output file 
+
+	    bool dataTakingFlag;//!< Data taking flag
 	public:
 
 		//! The Singleton creation/get method for this class
@@ -62,6 +65,8 @@ namespace NeuFlux
 			return single;
 		}
 
+		bool IsTakingData(){return dataTakingFlag;}
+		void SetDataTakingFlag(bool flag){dataTakingFlag = flag;}
 	    
 
 	    virtual ~NeuRootOutput()
@@ -144,6 +149,7 @@ namespace NeuFlux
 
 	    bool FillTree(std::string name)
 	    {
+	    	if(!dataTakingFlag) return false;
 	    	for(std::vector<TTree*>::iterator it = fTrees.begin(); it!= fTrees.end(); ++it )
 	    	{
 	    		if( std::string( (*it)->GetName() ) == name )

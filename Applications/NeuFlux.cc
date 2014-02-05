@@ -18,7 +18,8 @@
 #include "G4UIterminal.hh"
 #include "G4UItcsh.hh"
 
-#include "QGSP_BIC_HP.hh"
+//#include "QGSP_BIC_HP.hh"
+#include "NeuMesonProductionCut.hh"
 //#include "QGSP_BERT_HP.hh"
 //#include "QGSP_BERT_EMV.hh"
 
@@ -48,7 +49,8 @@ int main(int argc, char **argv)
 
    runManager->SetUserInitialization(geometry);
    
-   runManager->SetUserInitialization( new QGSP_BIC_HP);
+   //runManager->SetUserInitialization( new QGSP_BIC_HP);
+   runManager->SetUserInitialization( new NeuFlux::NeuMesonProductionCut(100*CLHEP::MeV) );
    //runManager->SetUserInitialization( new QGSP_BERT_HP);
    //runManager->SetUserInitialization( new QGSP_BERT_EMV);
 

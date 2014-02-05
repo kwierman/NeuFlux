@@ -27,8 +27,7 @@ namespace NeuFlux
   class NeuCuts:public G4VProcess {
    public:
 
-     NeuCuts(const G4String & processName =
-                              "NeuCut");
+     NeuCuts(const G4String & processName = "NeuCut");
 
       virtual ~ NeuCuts();
 
@@ -39,7 +38,7 @@ namespace NeuFlux
                                                            G4ForceCondition *
                                                            condition);
 
-     virtual G4VParticleChange *PostStepDoIt(const G4Track &,
+     virtual G4VParticleChange* PostStepDoIt(const G4Track &,
                                              const G4Step &);
 
      //  no operation in  AtRestGPIL
@@ -50,7 +49,7 @@ namespace NeuFlux
      };
 
      //  no operation in  AtRestDoIt      
-     virtual G4VParticleChange *AtRestDoIt(const G4Track &, const G4Step &) {
+     virtual G4VParticleChange* AtRestDoIt(const G4Track &, const G4Step &) {
         return NULL;
      };
 

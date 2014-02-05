@@ -43,26 +43,10 @@ void NeuFlux::NeuTrackingAction::PreUserTrackingAction(const G4Track* theTrack)
 
 void NeuFlux::NeuTrackingAction::PostUserTrackingAction(const G4Track* theTrack)
 {
-	UpdateBranches( theTrack);
+	this->UpdateBranches( theTrack);
+	NeuFlux::NeuRootOutput::GetInstance()->SetDataTakingFlag(fPDGEncoding == 2112);
 	NeuFlux::NeuRootOutput::GetInstance()->FillTree("NeuTrackingAction");
 }
-
-/*
-void NeuFlux::NeuTrackingAction::OnNewFileCreate()
-{
-	NeuFlux::NeuRootOutput::GetInstance()->AddTree("NeuTrackingAction");
-    NeuFlux::NeuRootOutput::GetInstance()->AddBranch<double>("NeuTrackingAction"," TrackID", 	&fTrackID 		  );              
-    NeuFlux::NeuRootOutput::GetInstance()->AddBranch<double>("NeuTrackingAction"," ParentID", 	&fParentID	      );               
-    NeuFlux::NeuRootOutput::GetInstance()->AddBranch<double>("NeuTrackingAction"," X", 			&fX       		  );        
-    NeuFlux::NeuRootOutput::GetInstance()->AddBranch<double>("NeuTrackingAction"," Y", 			&fY       		  );        
-    NeuFlux::NeuRootOutput::GetInstance()->AddBranch<double>("NeuTrackingAction"," Z", 			&fZ       		  );        
-    NeuFlux::NeuRootOutput::GetInstance()->AddBranch<double>("NeuTrackingAction"," LT", 		&fLT      		  );         
-    NeuFlux::NeuRootOutput::GetInstance()->AddBranch<double>("NeuTrackingAction"," GT", 		&fGT      		  );         
-    NeuFlux::NeuRootOutput::GetInstance()->AddBranch<double>("NeuTrackingAction"," PT", 		&fPT      		  );
-    NeuFlux::NeuRootOutput::GetInstance()->AddBranch<double>("NeuTrackingAction"," Volume", 	&fVolume      	  );
-    NeuFlux::NeuRootOutput::GetInstance()->AddBranch<double>("NeuTrackingAction"," NextVolume", &fNextVolume      );         
-}
-*/
 
 void NeuFlux::NeuTrackingAction::UpdateBranches(const G4Track* theTrack)
 {
@@ -97,30 +81,6 @@ void NeuFlux::NeuTrackingAction::UpdateBranches(const G4Track* theTrack)
 
 	fAtomicNumber	= def->GetAtomicNumber();
 	fAtomicMass		= def->GetAtomicMass();
-	
-	//NeuFlux::NeuRootOutput::GetInstance()->FillTree("NeuTrackingAction");
-
-	/*
-	std::string name = theTrack->GetVolume()->GetName();
-	if(name == "World")
-		fVolume = 1;
-	else if(name == "Rock")
-		fVolume = 2;
-	else if(name == "Concrete")
-		fVolume = 3;
-	else if (name == "Detector")
-		fVolume = 4;
-
-	std::string nextname = theTrack->GetNextVolume()->GetName();
-	if(nextname == "World")
-		fNextVolume = 1;
-	else if(nextname == "Rock")
-		fNextVolume = 2;
-	else if(nextname == "Concrete")
-		fNextVolume = 3;
-	else if (nextname == "Detector")
-		fNextVolume = 4;
-		*/	
 }
 
 void NeuFlux::NeuTrackingAction::OnNewFileCreate()

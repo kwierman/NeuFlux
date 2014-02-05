@@ -88,7 +88,7 @@ void NeuFlux::NeuCosmicGenerator::GeneratePrimaryVertex(G4Event * evt)
 	particle->SetTotalEnergy(particle_energy);
 	vertex->SetPrimary(particle);
 	evt->AddPrimaryVertex(vertex);
-	G4cout<<"Particle Parameters: Mass: "<<particle_mass<<std::endl;
+	G4cout<<"Cosmic Generator Generating Particle Parameters: Mass: "<<particle_mass<<std::endl;
 	G4cout<<"                     Energy: "<<particle_energy<<std::endl;
 	G4cout<<"                     Momentum: "<<momentum_magnitude<<std::endl;
 	G4cout<<"                     CosTheta: "<<costheta<<std::endl;

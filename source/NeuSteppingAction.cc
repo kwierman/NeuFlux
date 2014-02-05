@@ -24,6 +24,7 @@ NeuFlux::NeuSteppingAction::~NeuSteppingAction()
 void NeuFlux::NeuSteppingAction::UserSteppingAction(const G4Step *
                                                      theStep)
 {
+	/*
 	fPreX = theStep->GetPreStepPoint()->GetPosition().x();
 	fPreY = theStep->GetPreStepPoint()->GetPosition().y();
 	fPreZ = theStep->GetPreStepPoint()->GetPosition().z();
@@ -59,6 +60,7 @@ void NeuFlux::NeuSteppingAction::UserSteppingAction(const G4Step *
 	fTrackID = theStep->GetTrack()->GetTrackID();
 
 	NeuFlux::NeuRootOutput::GetInstance()->FillTree("NeuSteppingAction");
+	*/
 }
 
 void NeuFlux::NeuSteppingAction::OnNewFileCreate()

@@ -21,16 +21,11 @@ include_directories(${PROJECT_SOURCE_DIR}/include)
 #----------------------------------------------------------------------------
 # Locate sources and headers for this project
 file(GLOB sources ${PROJECT_SOURCE_DIR}/source/*.cc)
-#foreach(_file ${sources})
-#	message(STATUS ${_file})
-#endforeach()
 file(GLOB headers ${PROJECT_SOURCE_DIR}/include/*.hh)
-#foreach(_file ${headers})
-#	message(STATUS ${_file})
-#endforeach()
+include_directories(headers)
 #----------------------------------------------------------------------------
 # Build Libraries
-add_library(NeutronFlux SHARED ${sources} ${headers}  ${ROOT_})
+add_library(NeutronFlux SHARED ${sources} ${headers}  )
 target_link_libraries(NeutronFlux ${ROOT_LIBRARIES} ${Geant4_LIBRARIES})
 install(TARGETS NeutronFlux DESTINATION lib)
 #----------------------------------------------------------------------------

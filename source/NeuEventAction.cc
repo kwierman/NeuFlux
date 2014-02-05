@@ -73,6 +73,7 @@ void NeuFlux::NeuEventAction::EndOfEventAction(const G4Event * evt)
 	
 	fPrimaryN = 	evt->GetPrimaryVertex()->GetNumberOfParticle();	
 	NeuFlux::NeuRootOutput* output = NeuFlux::NeuRootOutput::GetInstance();
+	output->SetDataTakingFlag(false);
 	output->FillTree("NeuEventAction");	
 }
 

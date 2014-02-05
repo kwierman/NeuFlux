@@ -8,8 +8,6 @@
 #include "G4UIcmdWithADoubleAndUnit.hh"
 #include "G4UIcmdWithoutParameter.hh"
 
-
-
 namespace NeuFlux
 {
 	class NeuWorldGeometry;

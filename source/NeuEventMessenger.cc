@@ -39,8 +39,6 @@ NeuFlux::NeuEventMessenger::NeuEventMessenger(NeuFlux::NeuRunAction* run, NeuFlu
          fEnableSteppingAction = new G4UIcmdWithABool("/NeuFlux/Actions/Stepping/enable",this);
          fEnableSteppingAction->SetGuidance("Enable Stepping Actions");
 
-
-
 }
 
 NeuFlux::NeuEventMessenger::~NeuEventMessenger()

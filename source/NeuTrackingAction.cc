@@ -7,20 +7,6 @@
 
 #include <string>
 
-/*
-NeuFlux::NeuTrackingAction::NeuTrackingAction() : NeuOutputtingComponent(),  
-												  fTrackID(0), 
-												  fParentID(0),
-												  fX(0),
-												  fY(0),
-												  fZ(0),
-												  fLT(0),
-												  fGT(0),
-												  fPT(0),
-												  fVolume(0),
-												  fNextVolume(0)
-*/
-
 
 NeuFlux::NeuTrackingAction::NeuTrackingAction() : NeuOutputtingComponent(),  fTrackID(0), fParentID(0), fPreX(0), fPreY(0), fPreZ(0), fPreLT(0), fPreGT(0), fPrePT(0),
  fPostX(0), fPostY(0), fPostZ(0), fPostLT(0), fPostGT(0), fPostPT(0),
@@ -67,14 +53,16 @@ void NeuFlux::NeuTrackingAction::UpdateBranches(const G4Track* theTrack)
 
 	fPDGiSpin 		= def->GetPDGiSpin();
 	fPDGiParity 	= def->GetPDGiParity();
-	fPDGiConjugation= def->GetPDGiConjugation();
+	fPDGiConjugation
+					= def->GetPDGiConjugation();
 	fPDGIsospin		= def->GetPDGIsospin();
 	fPDGIsospin3 	= def->GetPDGIsospin3();
 	fPDGiIsospin 	= def->GetPDGiIsospin();
 	fPDGiIsospin3 	= def->GetPDGiIsospin3();
 
-	fPDGiGParity		= def->GetPDGiGParity();
-	fPDGMagneticMoment 		= def->GetPDGMagneticMoment();
+	fPDGiGParity	= def->GetPDGiGParity();
+	fPDGMagneticMoment
+			 		= def->GetPDGMagneticMoment();
 	fLeptonNumber	= def->GetLeptonNumber();
 	fBaryonNumber 	= def->GetBaryonNumber();
 	fPDGEncoding	= def->GetPDGEncoding();

@@ -57,7 +57,7 @@ namespace NeuFlux
 				G4UIdirectory* fTrackingDir;
 					G4UIcmdWithABool* fEnableTrackingAction;
 				G4UIdirectory* fSteppingDir;
-					G4UIcmdWithABool* fEnableSteppinAction;
+					G4UIcmdWithABool* fEnableSteppingAction;
 	};
 
 }

@@ -87,6 +87,11 @@ namespace NeuFlux
 	    bool CreateNewFile(std::string name)
 	    {
 	    	fTrees.clear();
+	    	if(fOutput)
+	    	{
+	    		fOutput->Close();
+	    		fOutput=NULL;
+	    	}
 	    	fOutput = new TFile(name.c_str(), "RECREATE");
 	    	if(fOutput->IsZombie())
 	    		return false;

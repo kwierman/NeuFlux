@@ -31,6 +31,7 @@ void NeuFlux::NeuRunAction::BeginOfRunAction(const G4Run * aRun)
    }
    
    std::stringstream ss;
+
    ss<<"NeuFlux_"<<fTimeSeed<<"_"<<fID<<".root";
   
   

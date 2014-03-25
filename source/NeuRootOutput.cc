@@ -7,6 +7,7 @@ NeuFlux::NeuRootOutput* NeuFlux::NeuRootOutput::single = NULL;
 NeuFlux::NeuOutputtingComponent::NeuOutputtingComponent()
 {
 	NeuRootOutput::GetInstance()->RegisterNewFileComponent(this);
+	outputEnabled=true;
 }
 
 

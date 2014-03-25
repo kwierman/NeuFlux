@@ -20,11 +20,15 @@ namespace NeuFlux
 	*/
 	class NeuOutputtingComponent
 	{
+		bool outputEnabled;
+	protected:
+		bool IsOutputEnabled(){return outputEnabled;}
 	public:
 		NeuOutputtingComponent();
 		
 		virtual ~NeuOutputtingComponent(){}
 		virtual void OnNewFileCreate() =0;
+		void SetOutputEnabled(bool input){outputEnabled = input;}
 	};
 
 	/*!

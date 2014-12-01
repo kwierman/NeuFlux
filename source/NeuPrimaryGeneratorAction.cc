@@ -34,7 +34,7 @@ NeuFlux::NeuPrimaryGeneratorAction::~NeuPrimaryGeneratorAction()
 NeuFlux::NeuPrimaryGeneratorAction* NeuFlux::NeuPrimaryGeneratorAction::SetNeutronFun()
 {
    fUseGPS = true;
- return this;  
+   return this;  
 }
 
 

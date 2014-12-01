@@ -22,11 +22,7 @@ NeuFlux::NeuCosmicGenerator::~NeuCosmicGenerator()
 {
 }
 
-/*!
-	The order of operations goes as this:
-		1. Generate the energy and position distribution of the particles.
 
-*/
 void NeuFlux::NeuCosmicGenerator::GeneratePrimaryVertex(G4Event * evt) 
 {
 
@@ -60,11 +56,13 @@ void NeuFlux::NeuCosmicGenerator::GeneratePrimaryVertex(G4Event * evt)
 	costheta = TMath::ACos(costheta);
 	G4double phi = NeuRandom::GetInstance()->GetRandom() * 2.0 * TMath::Pi();
 
+	phi = NeuRandom::GetInstance()->GetRandom() * 2.0 * TMath::Pi();
+
 	G4ThreeVector position(1000.0*TMath::Cos(costheta)*TMath::Sin(phi),
 							2000.0,
 							1000.0*TMath::Sin(costheta)*TMath::Sin(phi)
 							);//remember that y is the "up"
-	phi = NeuRandom::GetInstance()->GetRandom() * 2.0 * TMath::Pi();
+
 	/*
 	G4double pos_magnitude	=1000.0*TMath::Cos(costheta)*TMath::Sin(phi)*1000.0*TMath::Cos(costheta)*TMath::Sin(phi)
 							+2000.0*2000.0

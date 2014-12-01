@@ -30,7 +30,7 @@ void NeuFlux::NeuTrackingAction::PreUserTrackingAction(const G4Track* theTrack)
 void NeuFlux::NeuTrackingAction::PostUserTrackingAction(const G4Track* theTrack)
 {
 	this->UpdateBranches( theTrack);
-	NeuFlux::NeuRootOutput::GetInstance()->SetDataTakingFlag(fPDGEncoding == 2112 || fPDGEncoding == 22);
+	//NeuFlux::NeuRootOutput::GetInstance()->SetDataTakingFlag(fPDGEncoding == 2112 || fPDGEncoding == 22);
 	NeuFlux::NeuRootOutput::GetInstance()->FillTree("NeuTrackingAction");
 }
 

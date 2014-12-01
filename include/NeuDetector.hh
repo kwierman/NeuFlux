@@ -4,7 +4,7 @@
 
 #include "G4VSensitiveDetector.hh"
 #include "G4Step.hh"
-#include "G4HcofThisEvent.hh"
+#include "G4HCofThisEvent.hh"
 #include "G4Navigator.hh"
 
 #include "NeuDetectorHit.hh"
